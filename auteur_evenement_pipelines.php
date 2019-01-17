@@ -3,14 +3,14 @@
  * Utilisations de pipelines par Auteurs Événement
  *
  * @plugin     Auteurs Événement
- * @copyright  2013
+ * @copyright  2013 - 2019
  * @author     Rainer Müller
  * @licence    GNU/GPL
  * @package    SPIP\Auteur_evenement\Pipelines
  */
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
-	
+
 
 /**
  * Ajout de contenu sur certaines pages,
@@ -55,7 +55,7 @@ function auteur_evenement_affiche_milieu($flux) {
  */
 function auteur_evenement_affiche_auteurs_interventions($flux) {
 	if ($id_auteur = intval($flux['args']['id_auteur'])) {
-        $flux['data'] .='<br class="nettoyeur"';
+				$flux['data'] .='<br class="nettoyeur"';
 		$flux['data'] .= recuperer_fond('prive/objets/liste/evenements', array(
 			'id_auteur' => $id_auteur,
 			'titre' => _T('auteur_evenement:info_evenements_auteur')
@@ -64,6 +64,3 @@ function auteur_evenement_affiche_auteurs_interventions($flux) {
 	}
 	return $flux;
 }
-
-
-?>
